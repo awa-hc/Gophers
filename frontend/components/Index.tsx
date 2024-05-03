@@ -41,7 +41,7 @@ export function Index() {
     emissiveIntensity: 0.1,
     shininess: 0.9,
     polygonColor: "rgba(255,255,255,0.7)",
-    ambientLight: "#38bdf8",
+    ambientLight: "#ffffff",
     directionalLeftLight: "#ffffff",
     directionalTopLight: "#ffffff",
     pointLight: "#ffffff",
@@ -419,9 +419,9 @@ export function Index() {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-screen dark:bg-dark bg-dark w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-auto md:h-screen dark:bg-dark bg-dark w-full">
         <div className="h-[40rem]  bg-black flex flex-col mt-32 items-center justify-center  rounded-md">
-          <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20 text-flower">
+          <h1 className="md:text-7xl text-7xl lg:text-9xl font-bold text-center text-white relative z-20 text-flower">
             Gophers
           </h1>
           <div className="w-[40rem] h-40 relative">
@@ -444,7 +444,7 @@ export function Index() {
             {/* Radial Gradient to prevent sharp edges */}
             <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
           </div>
-          <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
+          <div className="max-w-7xl mx-auto w-full relative overflow-hidden  md:h-[40rem] px-4">
             <motion.div
               initial={{
                 opacity: 0,
