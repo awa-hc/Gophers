@@ -7,6 +7,8 @@ import { SparklesCore } from "./ui/sparkles";
 import { TypewriterEffectSmooth } from "./ui/typewritter-effect";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 import { PinContainer } from "./ui/3d-pin";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
+import Link from "next/link";
 
 const World = dynamic(
   () => import("@/components/ui/globe").then((m) => m.World),
@@ -483,14 +485,22 @@ export function Index() {
           </p>
           <TypewriterEffectSmooth words={words} />
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
-            <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
-              Join now
-            </button>
-            <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">
-              Signup
-            </button>
+            <Link href="/contact" passHref>
+              <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
+                Join now
+              </button>
+            </Link>
+            <Link href="/contact" passHref>
+              <button className="w-40 h-10 rounded-xl bg-white text-black border border-black text-sm">
+                Signup
+              </button>
+            </Link>
           </div>
         </div>
+        
+      </div>
+      <div className="h-full flex flex-col items-center mt-24 justify-start">
+        <TextGenerateEffect words="Here are some of our ongoing projects!" />
       </div>
       <div className="h-screen grid grid-cols-1 md:grid-cols-2  bg-black md:w-3/4 place-content-center place-items-center mx-auto">
         <div>
@@ -548,7 +558,7 @@ export function Index() {
               </h3>
               <div className="text-base !m-0 !p-0 font-normal">
                 <span className="text-slate-500 ">
-                  Application for managing hotel bookings and reservations.
+                  Landing page for a motel chain in Santa Cruz, Bolivia.
                 </span>
               </div>
               <div className="flex flex-1 items-center justify-center w-full rounded-lg mt-4">
@@ -583,6 +593,9 @@ export function Index() {
             </div>
           </PinContainer>
         </div>
+      </div>
+      <div className="h-full flex flex-col items-center mt-24 justify-start">
+        <TextGenerateEffect words="We are ready to GO!" />
       </div>
     </>
   );
