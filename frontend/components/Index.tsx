@@ -492,7 +492,7 @@ export function Index() {
           </div>
         </div>
       </div>
-      <div className="h-screen grid grid-cols-2  bg-black md:w-3/4 place-content-center place-items-center mx-auto">
+      <div className="h-screen grid grid-cols-1 md:grid-cols-2  bg-black md:w-3/4 place-content-center place-items-center mx-auto">
         <div>
           <PinContainer title="Go Study" href="https://twitter.com/mannupaaji">
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
