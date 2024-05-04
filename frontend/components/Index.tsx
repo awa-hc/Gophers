@@ -1,9 +1,12 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import { SparklesCore } from "./ui/sparkles";
 import { TypewriterEffectSmooth } from "./ui/typewritter-effect";
+import { StickyScroll } from "./ui/sticky-scroll-reveal";
+import { PinContainer } from "./ui/3d-pin";
 
 const World = dynamic(
   () => import("@/components/ui/globe").then((m) => m.World),
@@ -26,16 +29,15 @@ const words = [
   },
   {
     text: "Gophers.",
-    className:"text-blue-500 dark:text-blue-500",
+    className: "text-blue-500 dark:text-blue-500",
   },
-
 ];
 export function Index() {
   const globeConfig = {
     pointSize: 4,
     globeColor: "#000000",
     showAtmosphere: true,
-    atmosphereColor: "#FFFFFF",
+    atmosphereColor: "#000000",
     atmosphereAltitude: 0.1,
     emissive: "#062056",
     emissiveIntensity: 0.1,
@@ -416,7 +418,6 @@ export function Index() {
       color: colors[Math.floor(Math.random() * (colors.length - 1))],
     },
   ];
-
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-auto md:h-screen dark:bg-dark bg-dark w-full">
@@ -475,7 +476,7 @@ export function Index() {
           </div>
         </div>
       </div>
-      <div className="h-screen bg-black w-full">
+      <div className="h-full bg-black w-full">
         <div className="flex flex-col items-center justify-center h-[40rem]  ">
           <p className="text-neutral-600 dark:text-neutral-200 text-xs sm:text-base  ">
             The trip to the future starts here
@@ -489,6 +490,98 @@ export function Index() {
               Signup
             </button>
           </div>
+        </div>
+      </div>
+      <div className="h-screen grid grid-cols-2  bg-black md:w-3/4 place-content-center place-items-center mx-auto">
+        <div>
+          <PinContainer title="Go Study" href="https://twitter.com/mannupaaji">
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                Go Study
+              </h3>
+              <div className="text-base !m-0 !p-0 font-normal">
+                <span className="text-slate-500 ">
+                  A platform for task management and study planning.
+                </span>
+              </div>
+              <div className="flex flex-1 items-center justify-center w-full rounded-lg mt-4">
+                <img
+                  src="/gostudy.png"
+                  alt="Go Study"
+                  className="object-contain h-3/4 w-3/4"
+                />
+              </div>
+            </div>
+          </PinContainer>
+        </div>
+
+        <div>
+          <PinContainer title="Proadent" href="https://twitter.com/mannupaaji">
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                Proadent
+              </h3>
+              <div className="text-base !m-0 !p-0 font-normal">
+                <span className="text-slate-500 ">
+                  System for managing dental clinics and patient records.
+                </span>
+              </div>
+              <div className="flex flex-1 items-center justify-center w-full rounded-lg mt-4">
+                <img
+                  src="/proadent.png"
+                  alt="proadent"
+                  className="object-contain h-3/4 w-3/4"
+                />
+              </div>
+            </div>
+          </PinContainer>
+        </div>
+
+        <div className="mt-28">
+          <PinContainer
+            title="Mango Motels"
+            href="https://twitter.com/mannupaaji"
+          >
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                Mango Motels
+              </h3>
+              <div className="text-base !m-0 !p-0 font-normal">
+                <span className="text-slate-500 ">
+                  Application for managing hotel bookings and reservations.
+                </span>
+              </div>
+              <div className="flex flex-1 items-center justify-center w-full rounded-lg mt-4">
+                <img
+                  src="/mango.png"
+                  alt="Mango Motels"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </PinContainer>
+        </div>
+
+        <div className="mt-28">
+          <PinContainer title="needex" href="https://twitter.com/mannupaaji">
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
+                Needex
+              </h3>
+              <div className="text-base !m-0 !p-0 font-normal">
+                <span className="text-slate-500 ">
+                  Application for tecnician services and job management.
+                </span>
+              </div>
+              <div className="flex flex-1 items-center justify-center w-full rounded-lg mt-4">
+                <img
+                  src="/needex.png"
+                  alt="Go Study"
+                  className="object-contain h-3/4 w-3/4"
+                />
+              </div>
+            </div>
+          </PinContainer>
         </div>
       </div>
     </>
