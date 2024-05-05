@@ -43,7 +43,7 @@ export function Index() {
     emissive: "#062056",
     emissiveIntensity: 0.1,
     shininess: 0.9,
-    polygonColor: "rgba(255,255,255,0.7)",
+    polygonColor: "rgba(255,255,255, 1)",
     ambientLight: "#ffffff",
     directionalLeftLight: "#ffffff",
     directionalTopLight: "#ffffff",
@@ -499,7 +499,7 @@ export function Index() {
       </div>
 
       <div className="h-full grid grid-cols-1 md:grid-cols-2  bg-black md:w-3/4 place-content-center place-items-center mx-auto">
-        <div className="h-full w-2/3 col-span-1 md:col-span-2 flex flex-col items-center mt-24 justify-start">
+        <div className="h-full w-2/3 col-span-1 md:col-span-2 text-center flex flex-col items-center mt-24 justify-start">
           <TextGenerateEffect words="Here are some of our ongoing projects!" />
         </div>
         <div>
