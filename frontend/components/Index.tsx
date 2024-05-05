@@ -420,7 +420,7 @@ export function Index() {
     },
   ];
   return (
-    <div>
+    <div className="bg-black text-white">
       <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-auto md:h-screen bg-black w-full">
         <div className="h-[40rem]  bg-black flex flex-col mt-32 items-center justify-center  rounded-md">
           <h1 className="md:text-7xl text-7xl lg:text-9xl font-bold text-center text-white relative z-20 text-flower">
@@ -461,10 +461,10 @@ export function Index() {
               }}
               className="div"
             >
-              <h2 className="text-center text-flower text-xl md:text-4xl font-bold text-black dark:text-white">
+              <h2 className="text-center text-flower text-xl md:text-4xl font-bold text-white">
                 We are ready to GO!
               </h2>
-              <p className="text-center text-flower mt-5 text-black dark:text-white text-lg md:text-2xl ">
+              <p className="text-center text-flower mt-5 text-white text-lg md:text-2xl ">
                 Go All In with Gophers: Your Modern Development Crew
               </p>
             </motion.div>
@@ -479,13 +479,13 @@ export function Index() {
       </div>
       <div className="h-full bg-black w-full">
         <div className="flex flex-col items-center justify-center h-[40rem]  ">
-          <p className="text-neutral-600 dark:text-neutral-200 text-xs sm:text-base  ">
+          <p className="text-neutral-200 text-xs sm:text-base  ">
             The trip to the future starts here
           </p>
           <TypewriterEffectSmooth words={words} />
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
             <Link href="/meet" passHref>
-              <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
+              <button className="w-40 h-10 rounded-xl bg-black border border-white b text-white text-sm">
                 Schedule a meeting
               </button>
             </Link>
