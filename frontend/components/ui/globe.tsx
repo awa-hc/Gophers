@@ -80,7 +80,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     showAtmosphere: true,
     atmosphereAltitude: 0.1,
     polygonColor: "rgba(255,255,255,0.7)",
-    globeColor: "#1d072e",
+    globeColor: "#000000",
     emissive: "#000000",
     emissiveIntensity: 0.1,
     shininess: 0.9,
@@ -249,7 +249,7 @@ export function World(props: WorldProps) {
   return (
     <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
       <WebGLRendererConfig />
-      <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
+      <ambientLight color={globeConfig.ambientLight} intensity={10} />
       <directionalLight
         color={globeConfig.directionalLeftLight}
         position={new Vector3(-400, 100, 400)}

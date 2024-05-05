@@ -5,7 +5,6 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { SparklesCore } from "./ui/sparkles";
 import { TypewriterEffectSmooth } from "./ui/typewritter-effect";
-import { StickyScroll } from "./ui/sticky-scroll-reveal";
 import { PinContainer } from "./ui/3d-pin";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import Link from "next/link";
@@ -421,13 +420,13 @@ export function Index() {
     },
   ];
   return (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-auto md:h-screen dark:bg-dark bg-dark w-full">
+    <div>
+      <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-auto md:h-screen bg-black w-full">
         <div className="h-[40rem]  bg-black flex flex-col mt-32 items-center justify-center  rounded-md">
           <h1 className="md:text-7xl text-7xl lg:text-9xl font-bold text-center text-white relative z-20 text-flower">
             Gophers
           </h1>
-          <div className="w-[40rem] h-40 relative">
+          <div className="w-full md:w-[40rem] h-40 relative">
             {/* Gradients */}
             <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
             <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
@@ -497,14 +496,17 @@ export function Index() {
             </Link>
           </div>
         </div>
-        
       </div>
-      <div className="h-full flex flex-col items-center mt-24 justify-start">
-        <TextGenerateEffect words="Here are some of our ongoing projects!" />
-      </div>
-      <div className="h-screen grid grid-cols-1 md:grid-cols-2  bg-black md:w-3/4 place-content-center place-items-center mx-auto">
+
+      <div className="h-full grid grid-cols-1 md:grid-cols-2  bg-black md:w-3/4 place-content-center place-items-center mx-auto">
+        <div className="h-full w-2/3 col-span-1 md:col-span-2 flex flex-col items-center mt-24 justify-start">
+          <TextGenerateEffect words="Here are some of our ongoing projects!" />
+        </div>
         <div>
-          <PinContainer title="Go Study" href="https://twitter.com/mannupaaji">
+          <PinContainer
+            title="Go Study"
+            href="https://gophers-pied.vercel.app/"
+          >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
               <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
                 Go Study
@@ -526,7 +528,10 @@ export function Index() {
         </div>
 
         <div>
-          <PinContainer title="Proadent" href="https://twitter.com/mannupaaji">
+          <PinContainer
+            title="Proadent"
+            href="https://gophers-pied.vercel.app/"
+          >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
               <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
                 Proadent
@@ -550,7 +555,7 @@ export function Index() {
         <div className="mt-28">
           <PinContainer
             title="Mango Motels"
-            href="https://twitter.com/mannupaaji"
+            href="https://gophers-pied.vercel.app/"
           >
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
               <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
@@ -573,7 +578,7 @@ export function Index() {
         </div>
 
         <div className="mt-28">
-          <PinContainer title="needex" href="https://twitter.com/mannupaaji">
+          <PinContainer title="needex" href="https://gophers-pied.vercel.app/">
             <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
               <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
                 Needex
@@ -597,6 +602,6 @@ export function Index() {
       <div className="h-full flex flex-col items-center mt-24 justify-start">
         <TextGenerateEffect words="We are ready to GO!" />
       </div>
-    </>
+    </div>
   );
 }
