@@ -158,6 +158,14 @@ export function Globe({ globeConfig, data }: WorldProps) {
         .atmosphereColor(defaultProps.atmosphereColor)
         .atmosphereAltitude(defaultProps.atmosphereAltitude)
         .hexPolygonColor((e) => {
+          const countryId = e.id;
+          // console.log("countryId", countryId);
+          if (countryId === "BO") {
+            return "rgba(0,100,0,1)";
+          }
+          if (countryId === "AR") {
+            return "#006400";
+          }
           return defaultProps.polygonColor;
         });
       startAnimation();
