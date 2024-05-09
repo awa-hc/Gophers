@@ -51,10 +51,9 @@ export function Index() {
     arcTime: 1000,
     arcLength: 0.9,
     rings: 1,
-    maxRings: 3,
-    initialPosition: { lat: 22.3193, lng: 114.1694 },
+    initialPosition: { lat: -38.4161, lng: -23.6167 },
     autoRotate: true,
-    autoRotateSpeed: 0.5,
+    autoRotateSpeed: 1,
   };
   const colors = ["#ffffff", "#ffffff", "#ffffff"];
   const sampleArcs = [
@@ -419,6 +418,7 @@ export function Index() {
       color: colors[Math.floor(Math.random() * (colors.length - 1))],
     },
   ];
+
   return (
     <div className="bg-black text-white">
       <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-auto md:h-screen bg-black w-full">
@@ -467,6 +467,9 @@ export function Index() {
               <p className="text-center text-flower mt-5 text-white text-lg md:text-2xl ">
                 Go All In with Gophers: Your Modern Development Crew
               </p>
+              <span className="w-full items-center mx-auto flex flex-col justify-center">
+                <TextGenerateEffect words="Our operations are based in  Argentina 🇦🇷, Bolivia 🇧🇴, and the United States 🇺🇸!" />
+              </span>
             </motion.div>
           </div>
         </div>
