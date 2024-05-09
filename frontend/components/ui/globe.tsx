@@ -158,7 +158,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         .atmosphereColor(defaultProps.atmosphereColor)
         .atmosphereAltitude(defaultProps.atmosphereAltitude)
         .hexPolygonColor((e) => {
-          const countryId = e.id;
+          const countryId = (e as { id: string }).id;
           // console.log("countryId", countryId);
           if (countryId === "BO") {
             return "rgba(0,100,0,1)";
