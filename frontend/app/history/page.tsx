@@ -72,9 +72,10 @@ export default function History() {
           </p>
           <p className="text-neutral-200 text-xs md:text-sm font-normal mb-4">
             I accepted the invitation and I am currently studying at the same
-            career at the "universidad tecnologica nacional" in Buenos Aires,
-            Argentina.
+            career at the &apos;universidad tecnologica nacional&apos; in Buenos
+            Aires, Argentina.
           </p>
+
           <div className="grid grid-cols-2 gap-4">
             <Image
               src="/UTN.png"
