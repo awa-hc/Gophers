@@ -166,7 +166,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
           if (countryId === "AR") {
             return "#006400";
           }
-          if(countryId === "US") {
+          if (countryId === "US") {
             return "#00008B";
           }
           return defaultProps.polygonColor;

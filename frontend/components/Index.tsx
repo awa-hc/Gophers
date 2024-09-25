@@ -29,8 +29,15 @@ const words = [
     text: "with",
   },
   {
-    text: "Gophers.",
+    text: "golang",
     className: "text-blue-500 dark:text-blue-500",
+  },
+  {
+    text: "and",
+  },
+  {
+    text: "angular.",
+    className: "text-red-500 dark:text-red-500",
   },
 ];
 export function Index() {
@@ -363,6 +370,7 @@ export function Index() {
       arcAlt: 0.1,
       color: colors[Math.floor(Math.random() * (colors.length - 1))],
     },
+
     {
       order: 12,
       startLat: 35.6762,
@@ -422,9 +430,9 @@ export function Index() {
   return (
     <div className="bg-black text-white">
       <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-auto md:h-screen bg-black w-full">
-        <div className="h-[40rem]  bg-black flex flex-col mt-32 items-center justify-center  rounded-md">
-          <h1 className="md:text-7xl text-7xl lg:text-9xl font-bold text-center text-white relative z-20 text-flower">
-            Gophers
+        <div className="md:h-[40rem]  bg-black flex flex-col mt-32 items-center justify-center  rounded-md">
+          <h1 className="md:text-5xl text-4xl lg:text-8xl font-bold text-center text-white relative z-20 text-flower">
+            Horacio Cortez Noe
           </h1>
           <div className="w-full md:w-[40rem] h-40 relative">
             {/* Gradients */}
@@ -462,13 +470,13 @@ export function Index() {
               className="div"
             >
               <h2 className="text-center text-flower text-xl md:text-4xl font-bold text-white">
-                We are ready to GO!
+                I am ready to GO!
               </h2>
               <p className="text-center text-flower mt-5 text-white text-lg md:text-2xl ">
-                Go All In with Gophers: Your Modern Development Crew
+                Go all with me, modern software development, and consulting
               </p>
-              <span className="w-full items-center mx-auto flex flex-col justify-center">
-                <TextGenerateEffect words="Our operations are based in  Argentina 🇦🇷, Bolivia 🇧🇴, and the United States 🇺🇸!" />
+              <span className="w-full items-center mx-auto px-6 flex flex-col justify-center">
+                <TextGenerateEffect words="My experience are based in  Argentina 🇦🇷, Bolivia 🇧🇴, and the United States 🇺🇸!" />
               </span>
             </motion.div>
           </div>
@@ -483,7 +491,7 @@ export function Index() {
       <div className="h-full bg-black w-full">
         <div className="flex flex-col items-center justify-center h-[40rem]  ">
           <p className="text-neutral-200 text-xs sm:text-base  ">
-            The trip to the future starts here
+            I can help you with your next project
           </p>
           <TypewriterEffectSmooth words={words} />
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
@@ -503,14 +511,14 @@ export function Index() {
 
       <div className="h-full grid grid-cols-1 md:grid-cols-2  bg-black md:w-3/4 place-content-center place-items-center mx-auto">
         <div className="h-full w-2/3 col-span-1 md:col-span-2 text-center flex flex-col items-center mt-24 justify-start">
-          <TextGenerateEffect words="Here are some of our ongoing projects!" />
+          <TextGenerateEffect words="Here are some of my projects and collaborations!" />
         </div>
         <div>
           <PinContainer
             title="Go Study"
             href="https://gophers-pied.vercel.app/"
           >
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[10rem] lg:w-[20rem] h-[20rem] ">
               <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
                 Go Study
               </h3>
@@ -535,7 +543,7 @@ export function Index() {
             title="Proadent"
             href="https://gophers-pied.vercel.app/"
           >
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[10rem] lg:w-[20rem] h-[20rem] ">
               <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
                 Proadent
               </h3>
@@ -560,7 +568,7 @@ export function Index() {
             title="Mango Motels"
             href="https://gophers-pied.vercel.app/"
           >
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[10rem] lg:w-[20rem] h-[20rem] ">
               <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
                 Mango Motels
               </h3>
@@ -582,7 +590,7 @@ export function Index() {
 
         <div className="mt-28">
           <PinContainer title="needex" href="https://gophers-pied.vercel.app/">
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] ">
+            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[10rem] lg:w-[20rem] h-[20rem] ">
               <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
                 Needex
               </h3>
@@ -602,8 +610,14 @@ export function Index() {
           </PinContainer>
         </div>
       </div>
-      <div className="h-full flex flex-col items-center mt-24 justify-start">
-        <TextGenerateEffect words="We are ready to GO!" />
+      <div className="h-full flex flex-col items-center my-24 justify-start">
+        <TextGenerateEffect words="I am ready to GO!, We are ready to GO!" />
+      </div>
+      <div className="h-full bg-black w-full">
+        <p>
+          Footer with social media links, contact information, and other
+          information
+        </p>
       </div>
     </div>
   );
