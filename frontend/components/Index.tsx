@@ -476,7 +476,7 @@ export function Index() {
                 Go all with me, modern software development, and consulting
               </p>
               <span className="w-full items-center mx-auto px-6 flex flex-col justify-center">
-                <TextGenerateEffect words="My experience are based in  Argentina 🇦🇷, Bolivia 🇧🇴, and the United States 🇺🇸!" />
+                <TextGenerateEffect words="My experience are based in  Argentina 🇦🇷, Peru 🇵🇪, Bolivia 🇧🇴, and the United States 🇺🇸!" />
               </span>
             </motion.div>
           </div>
