@@ -66,6 +66,10 @@ export default function HeroGO() {
       <div className="flex justify-between items-center">
         <p className="text-2xl bold pb-2 border-b border-white">
           A page that uploads your HTML, CSS, and JS files to AWS.
+          <span className="block text-sm mt-2">
+            The uploaded files will be shown in the AWS page.
+            please be aware that the files will be public.
+          </span>
         </p>
         <button
           onClick={() => setShowForm(!showForm)}
