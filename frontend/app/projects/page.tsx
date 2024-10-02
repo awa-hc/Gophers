@@ -1,18 +1,9 @@
-"use client";
+"use client"; // Asegúrate de que esto esté al inicio
+
 import { HoverEffect } from "../../components/ui/card-hover-effect";
 
-export default function Projects() {
-  return (
-    <div className="p-10 max-w-5xl mx-auto px-8">
-      <p className="text-2xl bold pb-2 border-b border-white">
-        This page showcases some of the personal projects I&apos;ve worked on
-        outside of my professional work.
-      </p>
-      <HoverEffect items={projects} />
-    </div>
-  );
-}
-export const projects = [
+// Definición de los proyectos dentro del componente
+const projects = [
   {
     title: "HeroGO",
     description:
@@ -50,3 +41,15 @@ export const projects = [
     link: "https://microsoft.com",
   },
 ];
+
+export default function Projects() {
+  return (
+    <div className="p-10 max-w-5xl mx-auto px-8">
+      <p className="text-2xl bold pb-2 border-b border-white">
+        This page showcases some of the personal projects I&apos;ve worked on
+        outside of my professional work.
+      </p>
+      <HoverEffect items={projects} />
+    </div>
+  );
+}
