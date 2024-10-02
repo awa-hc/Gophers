@@ -27,6 +27,8 @@ export default function HeroGO() {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "https://gophers-pied.vercel.app",
+          Origin: "https://gophers-pied.vercel.app",
         },
         credentials: "include",
       });
@@ -47,6 +49,9 @@ export default function HeroGO() {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
+
+          "Access-Control-Allow-Origin": "https://gophers-pied.vercel.app",
+          Origin: "https://gophers-pied.vercel.app",
         },
         credentials: "include",
       });
@@ -67,8 +72,8 @@ export default function HeroGO() {
         <p className="text-2xl bold pb-2 border-b border-white">
           A page that uploads your HTML, CSS, and JS files to AWS.
           <span className="block text-sm mt-2">
-            The uploaded files will be shown in the AWS page.
-            please be aware that the files will be public.
+            The uploaded files will be shown in the AWS page. please be aware
+            that the files will be public.
           </span>
         </p>
         <button
