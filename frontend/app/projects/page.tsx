@@ -5,8 +5,8 @@ export default function Projects() {
   return (
     <div className="p-10 max-w-5xl mx-auto px-8">
       <p className="text-2xl bold pb-2 border-b border-white">
-        This page showcases some of the personal projects I've worked on outside
-        of my professional work."
+        This page showcases some of the personal projects I&apos;ve worked on
+        outside of my professional work.
       </p>
       <HoverEffect items={projects} />
     </div>
