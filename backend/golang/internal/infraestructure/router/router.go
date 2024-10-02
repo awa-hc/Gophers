@@ -61,7 +61,7 @@ func (r *Router) applyMiddlewares() {
 
 	r.engine.Use(cors.New(cors.Config{
 
-		AllowOrigins:     []string{"http://localhost:3000"},
+		AllowOrigins:     []string{"https://gophers-pied.vercel.app", "http://localhost:3000"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
@@ -69,7 +69,7 @@ func (r *Router) applyMiddlewares() {
 		MaxAge:           12 * time.Hour,
 	}))
 	r.engine.OPTIONS("/*any", func(c *gin.Context) {
-		c.Header("Access-Control-Allow-Origin", "http://localhost:3000")
+		c.Header("Access-Control-Allow-Origin", "https://gophers-pied.vercel.app")
 		c.Header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS")
 		c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization")
 		c.Header("Access-Control-Allow-Credentials", "true")

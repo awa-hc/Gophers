@@ -27,8 +27,6 @@ export default function HeroGO() {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "https://gophers-pied.vercel.app",
-          Origin: "https://gophers-pied.vercel.app",
         },
         credentials: "include",
       });
@@ -49,9 +47,6 @@ export default function HeroGO() {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-
-          "Access-Control-Allow-Origin": "https://gophers-pied.vercel.app",
-          Origin: "https://gophers-pied.vercel.app",
         },
         credentials: "include",
       });
