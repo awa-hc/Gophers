@@ -3,6 +3,7 @@ package handlers
 import (
 	"backend/golang/internal/core/domain/models"
 	"backend/golang/internal/core/ports/input"
+	"fmt"
 	"io"
 	"strconv"
 
@@ -115,6 +116,7 @@ func (h *ProjectHandler) GetProjectFiles(c *gin.Context) {
 	})
 }
 func (h *ProjectHandler) FindAll(c *gin.Context) {
+	fmt.Println("Finding all projects")
 	projects, err := h.projectService.FindAll()
 	if err != nil {
 		c.JSON(500, gin.H{"error": err.Error()})

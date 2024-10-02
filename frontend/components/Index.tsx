@@ -29,15 +29,8 @@ const words = [
     text: "with",
   },
   {
-    text: "golang",
+    text: "Golang.",
     className: "text-blue-500 dark:text-blue-500",
-  },
-  {
-    text: "and",
-  },
-  {
-    text: "angular.",
-    className: "text-red-500 dark:text-red-500",
   },
 ];
 export function Index() {
@@ -500,9 +493,9 @@ export function Index() {
                 Schedule a meeting
               </button>
             </Link>
-            <Link href="/contact" passHref>
+            <Link href="/projects" passHref>
               <button className="w-40 h-10 rounded-xl bg-white text-black border border-black text-sm">
-                Signup
+                Portfolio
               </button>
             </Link>
           </div>
