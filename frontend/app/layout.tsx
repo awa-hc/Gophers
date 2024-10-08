@@ -68,7 +68,7 @@ export default function RootLayout({
     },
     {
       name: "Projects",
-      link: "/projects",
+      link: "/#projects",
       icon: (
         <div className="h-full w-full text-black">
           <svg
@@ -121,9 +121,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* <link */}
+        {/* rel="stylesheet" */}
+        {/* href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" */}
+        {/* /> */}
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Space+Grotesk:wght@300..700&display=swap"
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
         />
       </head>
       <body className={inter.className}>

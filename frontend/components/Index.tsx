@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { SparklesCore } from "./ui/sparkles";
-import { TypewriterEffectSmooth } from "./ui/typewritter-effect";
-import { PinContainer } from "./ui/3d-pin";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import Link from "next/link";
+import { HoverEffect } from "./ui/card-hover-effect";
 
 const World = dynamic(
   () => import("@/components/ui/globe").then((m) => m.World),
@@ -15,25 +14,47 @@ const World = dynamic(
     ssr: false,
   }
 );
-const words = [
-  {
-    text: "Build",
-  },
-  {
-    text: "awesome",
-  },
-  {
-    text: "apps",
-  },
-  {
-    text: "with",
-  },
-  {
-    text: "Golang.",
-    className: "text-blue-500 dark:text-blue-500",
-  },
-];
+
 export function Index() {
+  const projects = [
+    {
+      title: "HeroGO",
+      description:
+        "A page that upload your html, css, js files and show the result in the aws page.",
+      link: "projects/herogo",
+    },
+    {
+      title: "Netflix",
+      description:
+        "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+      link: "https://netflix.com",
+    },
+    {
+      title: "Google",
+      description:
+        "A multinational technology company that specializes in Internet-related services and products.",
+      link: "https://google.com",
+    },
+    {
+      title: "Meta",
+      description:
+        "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
+      link: "https://meta.com",
+    },
+    {
+      title: "Amazon",
+      description:
+        "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+      link: "https://amazon.com",
+    },
+    {
+      title: "Microsoft",
+      description:
+        "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      link: "https://microsoft.com",
+    },
+  ];
+
   const globeConfig = {
     pointSize: 4,
     globeColor: "#000000",
@@ -424,7 +445,7 @@ export function Index() {
     <div className="bg-black text-white">
       <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-auto md:h-screen bg-black w-full">
         <div className="md:h-[40rem]  bg-black flex flex-col mt-32 items-center justify-center  rounded-md">
-          <h1 className="md:text-5xl text-4xl lg:text-8xl font-bold text-center text-white relative z-20 text-flower">
+          <h1 className="md:text-5xl text-4xl lg:text-6xl font-bold text-center text-white relative z-20 text-flower">
             Horacio Cortez Noe
           </h1>
           <div className="w-full md:w-[40rem] h-40 relative">
@@ -462,147 +483,163 @@ export function Index() {
               }}
               className="div"
             >
-              <h2 className="text-center text-flower text-xl md:text-4xl font-bold text-white">
-                I am ready to GO!
-              </h2>
-              <p className="text-center text-flower mt-5 text-white text-lg md:text-2xl ">
-                Go all with me, modern software development, and consulting
+              <p className="text-center italic underline decoration-pink-500 underline-offset-8 text-flower mt-5 text-white text-xl md:text-2xl ">
+                Modern software developer
               </p>
-              <span className="w-full items-center mx-auto px-6 flex flex-col justify-center">
-                <TextGenerateEffect words="My experience are based in  Argentina 🇦🇷, Peru 🇵🇪, Bolivia 🇧🇴, and the United States 🇺🇸!" />
+              <span className="w-full items-center mx-auto px-6 flex mt-10 flex-col justify-center">
+                <strong className="text-flower leading-snug tracking-wide text-lg md:text-2xl text-center">
+                  My experience are based in Argentina 🇦🇷, Peru 🇵🇪, Bolivia 🇧🇴
+                  and the United States 🇺🇸!
+                </strong>
               </span>
             </motion.div>
           </div>
         </div>
         <div>
-          {/* <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" /> */}
           <div className="w-full mt-20 -bottom-10 h-72 overflow-hidden md:h-[700px] z-10">
             <World data={sampleArcs} globeConfig={globeConfig} />
           </div>
         </div>
       </div>
-      <div className="h-full bg-black w-full">
-        <div className="flex flex-col items-center justify-center h-[40rem]  ">
-          <p className="text-neutral-200 text-xs sm:text-base  ">
-            I can help you with your next project
-          </p>
-          <TypewriterEffectSmooth words={words} />
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-4">
-            <Link href="/meet" passHref>
-              <button className="w-40 h-10 rounded-xl bg-black border border-white b text-white text-sm">
-                Schedule a meeting
-              </button>
-            </Link>
-            <Link href="/projects" passHref>
-              <button className="w-40 h-10 rounded-xl bg-white text-black border border-black text-sm">
-                Portfolio
-              </button>
-            </Link>
+
+      <div className="h-full grid grid-cols-1 bg-gray-700 rounded-2xl md:w-3/4 place-content-center place-items-center mx-auto">
+        <div className="w-3/4 col-span-1 text-center flex flex-col items-center py-10 justify-start">
+          <TextGenerateEffect words="Here are my software skills and knowledges!" />
+          <div className="grid grid-cols-1 lg:grid-cols-3 border border-white rounded-lg w-full m-5 p-1 h-full  justify-evenly [&>div]:rounded-sm [&>div]:border [&>div]:border-white [&>div]:h-full [&>div]:w-full [&>div]:py-5">
+            <div className="flex flex-col items-center h-full justify-center ">
+              <div className="flex flex-col items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-code"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M7 8l-4 4l4 4" />
+                  <path d="M17 8l4 4l-4 4" />
+                  <path d="M14 4l-4 16" />
+                </svg>
+                <span className="text-xl text-flower text-blue-400 mb-2">
+                  Software developer
+                </span>
+              </div>
+              <div className="text-flower text-base w-4/5">
+                i am going to code your solution from scratch, using the best
+                practices and the best technologies.
+                <span className="text-blue-400 block my-4">
+                  languages I speak
+                </span>
+                Golang, Python, JavaScript
+                <span className="text-blue-400 block my-4">Dev Tools</span>
+                <ul>
+                  <li>ReactJS - Angular</li>
+                  <li>Flask - FastAPI</li>
+                  <li>Gin - Echo</li>
+                  <li>Github</li>
+                  <li>Tailwind CSS</li>
+                </ul>
+              </div>
+            </div>
+            <div className="flex flex-col items-center justify-center ">
+              <div className="flex flex-col items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-cloud"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M6.657 18c-2.572 0 -4.657 -2.007 -4.657 -4.483c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.913 0 3.464 1.56 3.464 3.486c0 1.927 -1.551 3.487 -3.465 3.487h-11.878" />
+                </svg>
+                <span className="text-xl text-flower text-blue-400 mb-2">
+                  DevOps
+                </span>
+              </div>
+              <div className="text-flower text-base w-4/5">
+                Using the best tools and practices, i will create your DevOps
+                solution from scratch to automate your scalability
+                <span className="text-blue-400 block my-4">
+                  Technologies I use
+                </span>
+                AWS, Azure, Github
+                <span className="text-blue-400 block my-4">DevOps Tools</span>
+                <ul>
+                  <li>Docker</li>
+                  <li>Kubernetes</li>
+                  <li>CI/CD</li>
+                  <li>Scrum</li>
+                  <li>Terraform</li>
+                </ul>
+              </div>
+            </div>
+            <div className="flex flex-col items-center justify-center ">
+              <div className="flex flex-col items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-lock-open"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 11m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" />
+                  <path d="M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  <path d="M8 11v-5a4 4 0 0 1 8 0" />
+                </svg>
+                <span className="text-xl text-flower text-blue-400 mb-2">
+                  CyberSecurity
+                </span>
+              </div>
+              <div className="text-flower text-base w-4/5">
+                I am currently diving into the world of CyberSecurity to do my
+                software more secure and protect your data
+                <span className="text-blue-400 block my-4">Learning Focus</span>
+                hands-on practices
+                <span className="text-blue-400 block my-4">
+                  Keys Areas of study
+                </span>
+                <ul>
+                  <li>Vulnerabilities</li>
+                  <li>Data protection</li>
+                  <li>Network security</li>
+                  <li>Best practices</li>
+                  <li>Security awarness</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="h-full grid grid-cols-1 md:grid-cols-2  bg-black md:w-3/4 place-content-center place-items-center mx-auto">
-        <div className="h-full w-2/3 col-span-1 md:col-span-2 text-center flex flex-col items-center mt-24 justify-start">
-          <TextGenerateEffect words="Here are some of my projects and collaborations!" />
-        </div>
-        <div>
-          <PinContainer
-            title="Go Study"
-            href="https://gophers-pied.vercel.app/"
-          >
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[10rem] lg:w-[20rem] h-[20rem] ">
-              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-                Go Study
-              </h3>
-              <div className="text-base !m-0 !p-0 font-normal">
-                <span className="text-slate-500 ">
-                  A platform for task management and study planning.
-                </span>
-              </div>
-              <div className="flex flex-1 items-center justify-center w-full rounded-lg mt-4">
-                <img
-                  src="/gostudy.png"
-                  alt="Go Study"
-                  className="object-contain h-3/4 w-3/4"
-                />
-              </div>
-            </div>
-          </PinContainer>
-        </div>
+      {/* PROEJCTS */}
 
-        <div>
-          <PinContainer
-            title="Proadent"
-            href="https://gophers-pied.vercel.app/"
-          >
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[10rem] lg:w-[20rem] h-[20rem] ">
-              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-                Proadent
-              </h3>
-              <div className="text-base !m-0 !p-0 font-normal">
-                <span className="text-slate-500 ">
-                  System for managing dental clinics and patient records.
-                </span>
-              </div>
-              <div className="flex flex-1 items-center justify-center w-full rounded-lg mt-4">
-                <img
-                  src="/proadent.png"
-                  alt="proadent"
-                  className="object-contain h-3/4 w-3/4"
-                />
-              </div>
-            </div>
-          </PinContainer>
-        </div>
-
-        <div className="mt-28">
-          <PinContainer
-            title="Mango Motels"
-            href="https://gophers-pied.vercel.app/"
-          >
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[10rem] lg:w-[20rem] h-[20rem] ">
-              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-                Mango Motels
-              </h3>
-              <div className="text-base !m-0 !p-0 font-normal">
-                <span className="text-slate-500 ">
-                  Landing page for a motel chain in Santa Cruz, Bolivia.
-                </span>
-              </div>
-              <div className="flex flex-1 items-center justify-center w-full rounded-lg mt-4">
-                <img
-                  src="/mango.png"
-                  alt="Mango Motels"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </PinContainer>
-        </div>
-
-        <div className="mt-28">
-          <PinContainer title="needex" href="https://gophers-pied.vercel.app/">
-            <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[10rem] lg:w-[20rem] h-[20rem] ">
-              <h3 className="max-w-xs !pb-2 !m-0 font-bold  text-base text-slate-100">
-                Needex
-              </h3>
-              <div className="text-base !m-0 !p-0 font-normal">
-                <span className="text-slate-500 ">
-                  Application for tecnician services and job management.
-                </span>
-              </div>
-              <div className="flex flex-1 items-center justify-center w-full rounded-lg mt-4">
-                <img
-                  src="/needex.png"
-                  alt="Go Study"
-                  className="object-contain h-3/4 w-3/4"
-                />
-              </div>
-            </div>
-          </PinContainer>
+      <div className="h-full" id="projects">
+        <div className="p-10 max-w-5xl mx-auto px-8">
+          <p className="text-2xl bold pb-2 border-b border-white">
+            This page showcases some of the personal projects I&apos;ve worked
+            on outside of my professional work.
+          </p>
+          <HoverEffect items={projects} />
         </div>
       </div>
+
       <div className="h-full flex flex-col items-center my-24 justify-start">
         <TextGenerateEffect words="I am ready to GO!, We are ready to GO!" />
       </div>

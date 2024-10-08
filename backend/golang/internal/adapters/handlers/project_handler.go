@@ -47,74 +47,123 @@ func (h *ProjectHandler) Create(c *gin.Context) {
 func (h *ProjectHandler) UploadProjectFiles(c *gin.Context) {
 	projectID, err := strconv.ParseUint(c.Param("id"), 10, 32)
 	if err != nil {
-		c.JSON(400, gin.H{"error": err.Error()})
+		c.JSON(400, gin.H{"error": "Invalid project ID"})
 		return
 	}
+
+	// Almacena alertas para archivos opcionales
+	var alerts []string
+
+	var htmlBytes []byte
+	htmlFilename := ""
 	htmlFile, err := c.FormFile("html")
-	if err != nil {
-		c.JSON(400, gin.H{"error": err.Error()})
-		return
+	if err == nil {
+		htmlContent, err := htmlFile.Open()
+		if err != nil {
+			c.JSON(500, gin.H{"error": "Unable to open HTML file"})
+			return
+		}
+		defer htmlContent.Close()
+		htmlBytes, err = io.ReadAll(htmlContent)
+		if err != nil {
+			c.JSON(500, gin.H{"error": "Unable to read HTML file"})
+			return
+		}
+		htmlFilename = htmlFile.Filename // Guardar el nombre del archivo HTML
+	} else {
+		alerts = append(alerts, "You did not upload an HTML file")
 	}
 
+	// Cargar archivo CSS (opcional)
+	var cssBytes []byte
+	cssFilename := ""
 	cssFile, err := c.FormFile("css")
-	if err != nil {
-		c.JSON(400, gin.H{"error": err.Error()})
-		return
+	if err == nil {
+		// Solo intenta abrir y leer el archivo CSS si no hay error
+		cssContent, err := cssFile.Open()
+		if err != nil {
+			c.JSON(500, gin.H{"error": "Unable to open CSS file"})
+			return
+		}
+		defer cssContent.Close()
+		cssBytes, err = io.ReadAll(cssContent)
+		if err != nil {
+			c.JSON(500, gin.H{"error": "Unable to read CSS file"})
+			return
+		}
+		cssFilename = cssFile.Filename // Guardar el nombre del archivo CSS
+	} else {
+		alerts = append(alerts, "You did not upload a CSS file")
 	}
+
+	// Cargar archivo JS (opcional)
+	var jsBytes []byte
+	jsFilename := ""
 	jsFile, err := c.FormFile("js")
+	if err == nil {
+		// Solo intenta abrir y leer el archivo JS si no hay error
+		jsContent, err := jsFile.Open()
+		if err != nil {
+			c.JSON(500, gin.H{"error": "Unable to open JS file"})
+			return
+		}
+		defer jsContent.Close()
+		jsBytes, err = io.ReadAll(jsContent)
+		if err != nil {
+			c.JSON(500, gin.H{"error": "Unable to read JS file"})
+			return
+		}
+		jsFilename = jsFile.Filename // Guardar el nombre del archivo JS
+	} else {
+		alerts = append(alerts, "You did not upload a JS file")
+	}
+
+	// Subir archivos (solo si existen)
+	err = h.projectService.UploadProjectFiles(uint(projectID), htmlBytes, cssBytes, jsBytes, htmlFilename, cssFilename, jsFilename)
 	if err != nil {
-		c.JSON(400, gin.H{"error": err.Error()})
+		c.JSON(500, gin.H{"error": "Error uploading files"})
 		return
 	}
 
-	htmlContent, err := htmlFile.Open()
-	if err != nil {
-		c.JSON(500, gin.H{"error": err.Error()})
-		return
+	// Respuesta final con alertas si las hay
+	response := gin.H{
+		"message": "Files uploaded successfully",
 	}
-	defer htmlContent.Close()
-	cssContent, err := cssFile.Open()
-	if err != nil {
-		c.JSON(500, gin.H{"error": err.Error()})
-		return
-	}
-	defer cssContent.Close()
-	jsContent, err := jsFile.Open()
-	if err != nil {
-		c.JSON(500, gin.H{"error": err.Error()})
-		return
-	}
-	defer jsContent.Close()
-	htmlBytes, _ := io.ReadAll(htmlContent)
-	cssBytes, _ := io.ReadAll(cssContent)
-	jsBytes, _ := io.ReadAll(jsContent)
 
-	err = h.projectService.UploadProjectFiles(uint(projectID), htmlBytes, cssBytes, jsBytes, htmlFile.Filename, cssFile.Filename, jsFile.Filename)
-	if err != nil {
-		c.JSON(500, gin.H{"error": err.Error()})
-		return
+	if len(alerts) > 0 {
+		response["alerts"] = alerts
 	}
-	c.JSON(200, gin.H{"message": "Files uploaded successfully"})
+
+	c.JSON(200, response)
 
 }
-
 func (h *ProjectHandler) GetProjectFiles(c *gin.Context) {
 	projectID, err := strconv.ParseUint(c.Param("id"), 10, 32)
 	if err != nil {
 		c.JSON(400, gin.H{"error": err.Error()})
 		return
 	}
-	html, css, js, err := h.projectService.GetProjectFiles(uint(projectID))
+
+	html, css, js, alerts, err := h.projectService.GetProjectFiles(uint(projectID))
 	if err != nil {
 		c.JSON(500, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(200, gin.H{
+
+	response := gin.H{
 		"html": string(html),
 		"css":  string(css),
 		"js":   string(js),
-	})
+	}
+
+	// Agregar alertas a la respuesta si existen
+	if len(alerts) > 0 {
+		response["alerts"] = alerts
+	}
+
+	c.JSON(200, response)
 }
+
 func (h *ProjectHandler) FindAll(c *gin.Context) {
 	fmt.Println("Finding all projects")
 	projects, err := h.projectService.FindAll()

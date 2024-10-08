@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -9,9 +14,10 @@
 }
 
 .text-flower {
-  font-family: "Indie Flower", cursive;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 400;
-  font-style: normal;
+  /* font-optical-sizing: auto; */
+  /* font-style: normal; */
 }
 
 @media (prefers-color-scheme: dark) {

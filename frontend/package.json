@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-hover-card": "^1.1.2",
     "@react-three/drei": "^9.105.6",
     "@react-three/fiber": "^8.16.3",
     "@tabler/icons-react": "^3.17.0",
@@ -18,8 +19,10 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.5.6",
     "next": "14.2.3",
+    "qss": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-dropzone": "^14.2.9",
     "tailwind-merge": "^2.5.2",
     "three": "^0.164.1",
     "three-globe": "^2.31.0"
