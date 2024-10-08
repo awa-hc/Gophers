@@ -122,8 +122,8 @@ export default function Page({ params }: { params: { id: string } }) {
     }
   };
 
-  const deleteProject = async (id: string)  => {
-    console.log("click")
+  const deleteProject = async (id: string) => {
+    console.log("click");
     try {
       const res = await fetch(apiUrl + "/api/projects/" + id, {
         method: "DELETE",
@@ -205,7 +205,9 @@ export default function Page({ params }: { params: { id: string } }) {
                   ></iframe>
                 </div>
               ) : (
-                <p className="text-red-400">No HTML file available.</p>
+                <p className="lg:col-span-2 text-red-400">
+                  No HTML file available.
+                </p>
               )}
 
               {project.html_url ? (
@@ -281,6 +283,28 @@ export default function Page({ params }: { params: { id: string } }) {
               {project.js_url ? (
                 <div className="p-2 border rounded-xl">
                   <h1 className="text-lg font-bold">JavaScript:</h1>
+                  <div className="text-red-600 bg-red-300 px-2 py-2 flex gap-5 rounded-lg items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler h-full w-20 icons-tabler-outline icon-tabler-exclamation-circle"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                      <path d="M12 9v4" />
+                      <path d="M12 16v.01" />
+                    </svg>
+                    may in safari can not upload javascript file if fileType is
+                    application/x-javascript{" "}
+                  </div>
+
                   <div className="flex ">
                     <pre className="bg-gray-800 border border-gray-600 rounded-md p-4 max-h-60 overflow-auto w-full">
                       <code className="font-mono whitespace-pre-wrap">
@@ -305,6 +329,27 @@ export default function Page({ params }: { params: { id: string } }) {
               ) : (
                 <div>
                   <p className="text-red-400">No JavaScript file available.</p>
+                  <div className="text-red-600 bg-red-300 px-2 py-2 flex gap-5 rounded-lg items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler h-full w-20 icons-tabler-outline icon-tabler-exclamation-circle"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                      <path d="M12 9v4" />
+                      <path d="M12 16v.01" />
+                    </svg>
+                    may in safari can not upload javascript file if fileType is
+                    application/x-javascript{" "}
+                  </div>
                   <FileUpload
                     onChange={handleFileUpload}
                     fileType=".js"
