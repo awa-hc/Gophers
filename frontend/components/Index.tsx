@@ -505,8 +505,8 @@ export function Index() {
       <div className="h-full grid grid-cols-1 bg-gray-700 rounded-2xl md:w-3/4 place-content-center place-items-center mx-auto">
         <div className="w-3/4 col-span-1 text-center flex flex-col items-center py-10 justify-start">
           <TextGenerateEffect words="Here are my software skills and knowledges!" />
-          <div className="grid grid-cols-1 lg:grid-cols-3 border border-white rounded-lg w-full m-5 p-1 h-full  justify-evenly [&>div]:rounded-sm [&>div]:border [&>div]:border-white [&>div]:h-full [&>div]:w-full [&>div]:py-5">
-            <div className="flex flex-col items-center h-full justify-center ">
+          <div className="grid grid-cols-1 lg:grid-cols-3 border border-white rounded-lg w-full m-5 p-1 h-full  justify-evenly [&>div]:rounded-sm [&>div]:border [&>div]:border-white [&>div]:h-max [&>div]:w-full [&>div]:py-5">
+            <div className="flex flex-col  items-center h-11 justify-center ">
               <div className="flex flex-col items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -609,7 +609,7 @@ export function Index() {
               </div>
               <div className="text-flower text-base w-4/5">
                 I am currently diving into the world of CyberSecurity to do my
-                software more secure and protect your data
+                software solutions more secure and reliable protecting your idea
                 <span className="text-blue-400 block my-4">Learning Focus</span>
                 hands-on practices
                 <span className="text-blue-400 block my-4">
