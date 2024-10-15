@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for gophers-back on 2024-10-01T20:30:53-03:00
+# fly.toml app configuration file generated for gophers-back on 2024-10-14T14:24:24-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -19,4 +19,4 @@ primary_region = 'dfw'
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
-  cpus = 1
+  cpus = 2
