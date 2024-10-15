@@ -476,7 +476,7 @@ export function Index() {
 
   return (
     <div className="bg-black text-white">
-      <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-auto md:h-screen bg-gray-900/40 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2  py-20 h-auto md:h-screen  w-full">
         <div className="md:h-max  flex flex-col mt-32 items-center justify-center  rounded-md">
           <h1 className="md:text-5xl text-4xl lg:text-6xl font-bold text-center text-white relative z-20 text-flower">
             Horacio Cortez Noe
