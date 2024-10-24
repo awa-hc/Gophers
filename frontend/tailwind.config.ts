@@ -1,3 +1,5 @@
+import { rotate } from "three/examples/jsm/nodes/Nodes.js";
+
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -14,7 +16,11 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      rotate: {
+        "y-180": "180deg",
+      },
+    },
   },
   plugins: [addVariablesForColors],
 };

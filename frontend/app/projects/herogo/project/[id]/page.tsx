@@ -231,7 +231,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   <FileUpload
                     identifier="html-upload"
                     onChange={handleFileUpload}
-                    fileType=".html"
+                    fileType={[".html"]}
                   />
                 </div>
               ) : (
@@ -240,7 +240,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   <FileUpload
                     identifier="html-upload"
                     onChange={handleFileUpload}
-                    fileType=".html"
+                    fileType={[".html"]}
                   />
                 </div>
               )}
@@ -265,7 +265,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   </div>
                   <FileUpload
                     onChange={handleFileUpload}
-                    fileType=".css"
+                    fileType={[".css"]}
                     identifier="css-upload"
                   />
                 </div>
@@ -274,7 +274,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   <p className="text-red-400">No CSS file available.</p>
                   <FileUpload
                     onChange={handleFileUpload}
-                    fileType=".css"
+                    fileType={[".css"]}
                     identifier="css-upload"
                   />
                 </div>
@@ -322,7 +322,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   </div>
                   <FileUpload
                     onChange={handleFileUpload}
-                    fileType=".js"
+                    fileType={[".js"]}
                     identifier="js-upload"
                   />
                 </div>
@@ -352,7 +352,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   </div>
                   <FileUpload
                     onChange={handleFileUpload}
-                    fileType=".js"
+                    fileType={[".js"]}
                     identifier="js-upload"
                   />
                 </div>

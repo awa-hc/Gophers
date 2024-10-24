@@ -534,13 +534,27 @@ export function Index() {
           </div>
         </div>
       </div>
+      <div className="absolute w-full overflow-hidden leading-none">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="shape-fill"
+          ></path>
+        </svg>
+      </div>
 
-      <div className="h-full grid grid-cols-1 bg-gray-700 rounded-2xl md:w-3/4 place-content-center place-items-center mx-auto">
-        <div className="w-3/4 col-span-1 text-center flex flex-col items-center py-10 justify-start">
+      <div className=" min-h-screen flex flex-col items-center justify-center pt-10 lg:pt-32 bg-gradient-to-b from-pink-500 via-pink-800 to-black rounded-2xl  mx-auto">
+        <div className="w-3/4 col-span-1 flex-1 pt-10 text-center flex flex-col items-center py-10 justify-start">
           <TextGenerateEffect words="Here are my software skills and knowledges!" />
           <div className="grid grid-cols-1 lg:grid-cols-3 border border-white rounded-lg w-full m-5 p-1 justify-evenly [&>div]:rounded-sm [&>div]:border ">
             <CardIndex
-              name="Software"
+              image="/svg/one.svg"
+              name="Software Developer"
               icon={DevIcon}
               description="i am going to code your solution from scratch, using the best practices and the best technologies."
               subtitle="Go, Python, JavaScript"
@@ -552,6 +566,7 @@ export function Index() {
               f4_list="Tailwind CSS"
             />
             <CardIndex
+              image="/svg/three.svg"
               name="DevOps"
               icon={DevOpsIcon}
               description="Using the best tools and practices, i will create your DevOps solution from scratch to automate your scalability"
@@ -564,6 +579,7 @@ export function Index() {
               title2="DevOps Tools"
             />
             <CardIndex
+              image="/svg/two.svg"
               name="CyberSecuriry"
               icon={CyberSecuriryIcon}
               description="Currently diving CyberSecurity do software solutions more secure and reliable protecting your idea"
@@ -579,9 +595,7 @@ export function Index() {
         </div>
       </div>
 
-      {/* PROEJCTS */}
-
-      <div className="h-full" id="projects">
+      <div className="h-full " id="projects">
         <div className="p-10 max-w-5xl mx-auto px-8">
           <p className="text-2xl bold pb-2 border-b border-white">
             This page showcases some of the personal projects I&apos;ve worked
@@ -594,11 +608,50 @@ export function Index() {
       <div className="h-full flex flex-col items-center my-24 justify-start">
         <TextGenerateEffect words="I am ready to GO!, We are ready to GO!" />
       </div>
+      <div className=" w-full overflow-hidden leading-none bg-pink-500">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="shape-fill text-white "
+          ></path>
+        </svg>
+      </div>
       <div className="h-full bg-black w-full">
-        <p>
-          Footer with social media links, contact information, and other
-          information
-        </p>
+        <footer className="relative w-full bg-pink-500 min-h-[100px] p-5 flex flex-col items-center">
+          <a
+            href="https://www.linkedin.com/in/horacio-cortez-noe-11ba74265"
+            target="_blank"
+            className=" hover:bg-blue-500  p-1 rounded-full transition-all duration-200 ease-in-out"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              className="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+              <path d="M8 11l0 5" />
+              <path d="M8 8l0 .01" />
+              <path d="M12 16l0 -5" />
+              <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+            </svg>
+          </a>
+          <p className="text-white mt-3 text-sm font-light">
+            {`© ${new Date().getFullYear()} Horacio Cortez Noe. All rights reserved.`}
+          </p>
+        </footer>
       </div>
     </div>
   );
